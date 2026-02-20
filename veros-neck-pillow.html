@@ -125,8 +125,7 @@
     /* ─── HERO / PRODUCT SECTION ─── */
     .product-hero {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      min-height: 85vh;
+      grid-template-columns: 1fr 1fr;
       gap: 0;
     }
     .product-gallery {
@@ -134,56 +133,59 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px;
+      padding: 48px 40px;
       position: relative;
       overflow: hidden;
     }
     .product-gallery::before {
       content: '';
       position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 400px;
-      height: 400px;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
       background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
       opacity: 0.4;
     }
+    .gallery-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeUp 0.8s ease-out;
+    }
     .gallery-main {
       width: 100%;
-      max-width: 560px;
-      aspect-ratio: 1;
+      aspect-ratio: 4 / 5;
       background: linear-gradient(135deg, var(--warm-gray) 0%, var(--cream) 100%);
-      border-radius: 24px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.06);
-      animation: fadeUp 0.8s ease-out;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.08);
     }
     .gallery-placeholder {
       text-align: center;
       color: var(--mid-gray);
     }
     .gallery-placeholder .icon {
-      font-size: 80px;
-      margin-bottom: 16px;
+      font-size: 64px;
+      margin-bottom: 12px;
       display: block;
     }
-    .gallery-placeholder p { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+    .gallery-placeholder p { font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
     .gallery-thumbnails {
       display: flex;
-      gap: 12px;
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
+      gap: 8px;
     }
     .thumb {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       background: var(--warm-gray);
-      border-radius: 12px;
+      border-radius: 10px;
       border: 2px solid transparent;
       cursor: pointer;
       transition: all 0.2s;
@@ -193,15 +195,17 @@
       font-size: 11px;
       color: var(--mid-gray);
       font-weight: 500;
+      flex-shrink: 0;
     }
     .thumb.active, .thumb:hover { border-color: var(--accent); }
     .badge-top-left {
       position: absolute;
-      top: 24px;
-      left: 24px;
+      top: 14px;
+      left: 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+      z-index: 1;
     }
     .badge {
       padding: 6px 14px;
@@ -776,7 +780,8 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
       .product-hero { grid-template-columns: 1fr; }
-      .product-gallery { min-height: 50vh; }
+      .product-gallery { padding: 40px 32px; }
+      .gallery-wrap { max-width: 480px; }
       .product-info { padding: 40px 32px; }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -784,7 +789,7 @@
     @media (max-width: 768px) {
       .site-header { padding: 14px 20px; }
       .header-nav { display: none; }
-      .product-gallery { padding: 40px 20px; }
+      .product-gallery { padding: 32px 20px; }
       .product-info { padding: 32px 20px; }
       .benefits-grid { grid-template-columns: 1fr; }
       .how-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -866,22 +871,24 @@
   <!-- PRODUCT HERO -->
   <section class="product-hero">
     <div class="product-gallery">
-      <div class="badge-top-left">
-        <span class="badge sale">Save 40%</span>
-        <span class="badge best">Bestseller</span>
-      </div>
-      <div class="gallery-main">
-        <div class="gallery-placeholder">
-          <span class="icon">🛏️</span>
-          <p>Product Image<br><small style="text-transform:none;letter-spacing:0;font-weight:400;color:#999">Replace with your Shopify product images</small></p>
+      <div class="gallery-wrap">
+        <div class="badge-top-left">
+          <span class="badge sale">Save 40%</span>
+          <span class="badge best">Bestseller</span>
         </div>
-      </div>
-      <div class="gallery-thumbnails">
-        <div class="thumb active">1</div>
-        <div class="thumb">2</div>
-        <div class="thumb">3</div>
-        <div class="thumb">4</div>
-        <div class="thumb">5</div>
+        <div class="gallery-main">
+          <div class="gallery-placeholder">
+            <span class="icon">🛏️</span>
+            <p>Product Image<br><small style="text-transform:none;letter-spacing:0;font-weight:400;color:#999">Replace with your Shopify product images</small></p>
+          </div>
+        </div>
+        <div class="gallery-thumbnails">
+          <div class="thumb active">1</div>
+          <div class="thumb">2</div>
+          <div class="thumb">3</div>
+          <div class="thumb">4</div>
+          <div class="thumb">5</div>
+        </div>
       </div>
     </div>
 
