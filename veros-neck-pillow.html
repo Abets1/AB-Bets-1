@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEROS Therapeutic Neck Pillow | Advanced Traction + Heat + Massage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafaf9;
+      --cream: #f5f0eb;
+      --warm-gray: #e8e2da;
+      --dark-gray: #2a2a2a;
+      --mid-gray: #6b6b6b;
+      --accent: #c8a87c;
+      --accent-dark: #a88a5e;
+      --accent-light: #e8d5b8;
+      --green: #4a7c59;
+      --red-sale: #b44a3e;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark-gray);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announcement-bar {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .announcement-bar span { color: var(--accent); font-weight: 700; }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .header-nav { display: flex; gap: 32px; align-items: center; }
+    .header-nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--accent-dark); }
+    .cart-btn {
+      background: none;
+      border: 1px solid var(--dark-gray);
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: var(--font-body);
+    }
+    .cart-btn:hover { background: var(--black); color: var(--white); }
+
+    /* ─── SOCIAL PROOF TICKER ─── */
+    .trust-ticker {
+      background: var(--cream);
+      padding: 12px 0;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .ticker-track {
+      display: flex;
+      gap: 60px;
+      animation: ticker 20s linear infinite;
+      width: max-content;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--mid-gray);
+      white-space: nowrap;
+    }
+    .ticker-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ─── HERO / PRODUCT SECTION ─── */
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 85vh;
+      gap: 0;
+    }
+    .product-gallery {
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-gallery::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+      opacity: 0.4;
+    }
+    .gallery-main {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--warm-gray) 0%, var(--cream) 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.06);
+      animation: fadeUp 0.8s ease-out;
+    }
+    .gallery-placeholder {
+      text-align: center;
+      color: var(--mid-gray);
+    }
+    .gallery-placeholder .icon {
+      font-size: 80px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .gallery-placeholder p { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+    .gallery-thumbnails {
+      display: flex;
+      gap: 12px;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .thumb {
+      width: 64px;
+      height: 64px;
+      background: var(--warm-gray);
+      border-radius: 12px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--mid-gray);
+      font-weight: 500;
+    }
+    .thumb.active, .thumb:hover { border-color: var(--accent); }
+    .badge-top-left {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .badge {
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+    .badge.sale { background: var(--red-sale); color: var(--white); }
+    .badge.best { background: var(--black); color: var(--white); }
+
+    /* ─── PRODUCT INFO ─── */
+    .product-info {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeUp 0.8s ease-out 0.15s both;
+    }
+    .product-tag {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .product-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .stars { color: var(--accent); font-size: 18px; letter-spacing: 2px; }
+    .rating-text { font-size: 14px; color: var(--mid-gray); font-weight: 500; }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .price-current {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .price-compare {
+      font-size: 20px;
+      color: var(--mid-gray);
+      text-decoration: line-through;
+    }
+    .price-save {
+      background: #fef2e8;
+      color: var(--red-sale);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .product-desc {
+      font-size: 16px;
+      color: var(--mid-gray);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+    .product-desc strong { color: var(--dark-gray); }
+
+    /* ─── VARIANT SELECTOR ─── */
+    .variant-section { margin-bottom: 28px; }
+    .variant-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--dark-gray);
+    }
+    .variant-options { display: flex; gap: 10px; }
+    .variant-opt {
+      padding: 12px 24px;
+      border: 2px solid var(--warm-gray);
+      background: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--dark-gray);
+    }
+    .variant-opt:hover { border-color: var(--accent); }
+    .variant-opt.selected {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ─── ADD TO CART ─── */
+    .atc-section { margin-bottom: 24px; }
+    .atc-btn {
+      width: 100%;
+      padding: 18px 40px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .atc-btn:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+    .atc-btn:active { transform: translateY(0); }
+    .stock-urgency {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .stock-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .payment-icons {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      align-items: center;
+    }
+    .pay-icon {
+      width: 44px;
+      height: 28px;
+      background: var(--warm-gray);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--mid-gray);
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── TRUST BADGES ROW ─── */
+    .trust-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark-gray);
+      letter-spacing: 0.3px;
+    }
+    .trust-badge svg { width: 20px; height: 20px; color: var(--accent-dark); }
+
+    /* ─── DETAILS ACCORDION ─── */
+    .accordion-section {
+      margin-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .accordion-trigger {
+      width: 100%;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--dark-gray);
+    }
+    .accordion-trigger .icon { font-size: 20px; transition: transform 0.3s; }
+    .accordion-trigger.open .icon { transform: rotate(45deg); }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-content.open { max-height: 400px; }
+    .accordion-inner {
+      padding: 0 0 20px;
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.8;
+    }
+
+    /* ─── BENEFITS SECTION ─── */
+    .benefits-section {
+      padding: 100px 48px;
+      background: var(--black);
+      color: var(--white);
+    }
+    .section-eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.15;
+      margin-bottom: 64px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 40px 28px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .benefit-card:hover { transform: translateY(-6px); border-color: rgba(200,168,124,0.3); }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .benefit-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-section {
+      padding: 100px 48px;
+      background: var(--cream);
+    }
+    .how-section .section-eyebrow { color: var(--accent-dark); }
+    .how-section .section-title { color: var(--black); }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .how-step {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 800;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .how-step h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .how-step p {
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.6;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ─── FEATURES STRIP ─── */
+    .features-strip {
+      padding: 80px 48px;
+      background: var(--white);
+    }
+    .features-strip .section-eyebrow { color: var(--accent-dark); }
+    .features-strip .section-title { color: var(--black); margin-bottom: 48px; }
+    .features-list {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 0;
+    }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      align-items: center;
+    }
+    .feature-icon-sm {
+      width: 48px;
+      height: 48px;
+      background: var(--cream);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .feature-name {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--black);
+    }
+    .feature-desc {
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.5;
+    }
+
+    /* ─── REVIEWS SECTION ─── */
+    .reviews-section {
+      padding: 100px 48px;
+      background: var(--black);
+      color: var(--white);
+    }
+    .reviews-section .section-title { margin-bottom: 48px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .review-stars { color: var(--accent); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+    .review-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .author-info .name { font-weight: 600; font-size: 14px; }
+    .author-info .tag { font-size: 12px; color: var(--accent); }
+    .verified-badge {
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-section {
+      padding: 100px 48px;
+      background: var(--cream);
+    }
+    .faq-section .section-eyebrow { color: var(--accent-dark); }
+    .faq-section .section-title { color: var(--black); margin-bottom: 48px; }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .faq-q {
+      width: 100%;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      text-align: left;
+    }
+    .faq-q .icon { font-size: 20px; transition: transform 0.3s; color: var(--accent-dark); }
+    .faq-q.open .icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-a.open { max-height: 300px; }
+    .faq-a-inner {
+      padding: 0 0 22px;
+      font-size: 15px;
+      color: var(--mid-gray);
+      line-height: 1.7;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      padding: 100px 48px;
+      background: var(--white);
+      text-align: center;
+    }
+    .final-cta .section-title { color: var(--black); margin-bottom: 20px; }
+    .final-cta p {
+      font-size: 17px;
+      color: var(--mid-gray);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 56px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: var(--font-body);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .cta-btn:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+    .guarantee-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--mid-gray);
+      font-weight: 500;
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.5);
+      padding: 60px 48px 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    .footer-brand .logo { color: var(--white); display: inline-block; margin-bottom: 16px; font-size: 24px; }
+    .footer-brand p { font-size: 14px; line-height: 1.6; max-width: 280px; }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .product-hero { grid-template-columns: 1fr; }
+      .product-gallery { min-height: 50vh; }
+      .product-info { padding: 40px 32px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .site-header { padding: 14px 20px; }
+      .header-nav { display: none; }
+      .product-gallery { padding: 40px 20px; }
+      .product-info { padding: 32px 20px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: 48px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .feature-row { grid-template-columns: 48px 1fr; }
+      .feature-desc { grid-column: 2; }
+      .trust-row { flex-wrap: wrap; }
+      .benefits-section, .how-section, .reviews-section, .faq-section, .final-cta, .features-strip { padding: 64px 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    Limited Launch Offer — <span>Save 40% Today</span> — Free Shipping on All Orders
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/" class="logo">VEROS</a>
+    <nav class="header-nav">
+      <a href="/collections/all">Shop</a>
+      <a href="/pages/our-story">Our Story</a>
+      <a href="/pages/reviews">Reviews</a>
+      <a href="/pages/faq">FAQ</a>
+      <button class="cart-btn">Cart (0)</button>
+    </nav>
+  </header>
+
+  <!-- TRUST TICKER -->
+  <div class="trust-ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        90-Night Risk-Free Guarantee
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        50,000+ Happy Customers
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.8 ★ Average Rating
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a1 1 0 0 1-1 1h-2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free 3-5 Day Shipping
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        FSA / HSA Eligible
+      </span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        90-Night Risk-Free Guarantee
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        50,000+ Happy Customers
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.8 ★ Average Rating
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a1 1 0 0 1-1 1h-2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free 3-5 Day Shipping
+      </span>
+      <span class="ticker-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        FSA / HSA Eligible
+      </span>
+    </div>
+  </div>
+
+  <!-- PRODUCT HERO -->
+  <section class="product-hero">
+    <div class="product-gallery">
+      <div class="badge-top-left">
+        <span class="badge sale">Save 40%</span>
+        <span class="badge best">Bestseller</span>
+      </div>
+      <div class="gallery-main">
+        <div class="gallery-placeholder">
+          <span class="icon">🛏️</span>
+          <p>Product Image<br><small style="text-transform:none;letter-spacing:0;font-weight:400;color:#999">Replace with your Shopify product images</small></p>
+        </div>
+      </div>
+      <div class="gallery-thumbnails">
+        <div class="thumb active">1</div>
+        <div class="thumb">2</div>
+        <div class="thumb">3</div>
+        <div class="thumb">4</div>
+        <div class="thumb">5</div>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <div class="product-tag">Advanced Cervical Traction Technology</div>
+      <h1 class="product-title">VEROS Therapeutic<br>Neck Pillow™</h1>
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">2,847 verified reviews</span>
+      </div>
+      <div class="price-row">
+        <span class="price-current">$149.99</span>
+        <span class="price-compare">$249.99</span>
+        <span class="price-save">Save $100</span>
+      </div>
+      <p class="product-desc">
+        Combines <strong>heat therapy, vibration massage, and cervical traction</strong> in one device. Just 30 minutes a day eases stiffness, neck pain, neck hump, and tension headaches from forward head posture.
+      </p>
+
+      <!-- VARIANT SELECTOR -->
+      <div class="variant-section">
+        <div class="variant-label">Choose Your Model</div>
+        <div class="variant-options">
+          <button class="variant-opt selected" onclick="selectVariant(this)">Standard</button>
+          <button class="variant-opt" onclick="selectVariant(this)">Pro + Heat</button>
+        </div>
+      </div>
+
+      <!-- ADD TO CART -->
+      <div class="atc-section">
+        <button class="atc-btn" onclick="addToCart()">Add to Cart — $149.99</button>
+        <div class="stock-urgency">
+          <span class="stock-dot"></span>
+          <span style="color:var(--green)">In Stock</span>
+          <span style="color:var(--mid-gray)">— Ships within 24 hours</span>
+        </div>
+      </div>
+
+      <div class="payment-icons">
+        <div class="pay-icon">VISA</div>
+        <div class="pay-icon">MC</div>
+        <div class="pay-icon">AMEX</div>
+        <div class="pay-icon">PYPL</div>
+        <div class="pay-icon">APAY</div>
+        <div class="pay-icon">GPAY</div>
+      </div>
+
+      <!-- TRUST BADGES -->
+      <div class="trust-row">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          90-Night Guarantee
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a1 1 0 0 1-1 1h-2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Free Shipping
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          FSA / HSA Eligible
+        </div>
+      </div>
+
+      <!-- ACCORDION DETAILS -->
+      <div class="accordion-section">
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            Shipping + Returns <span class="icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <strong>Processing:</strong> 1–3 business days<br>
+              <strong>Shipping:</strong> Free standard 3–5 business days<br>
+              <strong>90-Day Returns:</strong> Try it, love it, or send it back — no questions asked. Contact our team with your order number for a hassle-free return.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            Product Specifications <span class="icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <strong>Size:</strong> 15.5" × 10.6" × 6.25"<br>
+              <strong>Weight:</strong> 1.9 lbs<br>
+              <strong>Material:</strong> 100% Polyurethane Memory Foam<br>
+              <strong>Modes:</strong> 3 modes — traction lift, heat, vibration massage<br>
+              <strong>Power:</strong> Wireless, USB-C charging (90 min to full)<br>
+              <strong>Battery:</strong> 4× 30-minute sessions per charge<br>
+              <strong>Safety:</strong> Auto-shutoff at 30 min, temp limited to 112°F
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            Warranty <span class="icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              Every VEROS pillow comes with a <strong>90-day standard warranty</strong> covering any manufacturing defects. Extended lifetime warranty available at checkout for complete peace of mind.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="benefits-section fade-in">
+    <div class="section-eyebrow">Backed By Science</div>
+    <h2 class="section-title">Four Therapies. One Pillow.</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🦴</div>
+        <h3>Corrects Neck Hump</h3>
+        <p>Traction therapy relieves spinal pressure and restores natural posture to reduce tech neck and forward head posture.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Relieves Neck Pain</h3>
+        <p>Eases muscle knots and stiffness while realigning your cervical curve for fast, lasting pain relief.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌙</div>
+        <h3>Improves Sleep</h3>
+        <p>Soothing heat and massage therapy relaxes the neck and spine for deep, restorative sleep every night.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🧘</div>
+        <h3>Stress Relief</h3>
+        <p>Heat massage and controlled stretching releases built-up tension headaches for full-body relaxation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section fade-in">
+    <div class="section-eyebrow">Simple & Effective</div>
+    <h2 class="section-title" style="color:var(--black)">Relief in 3 Steps</h2>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="step-number">01</div>
+        <h3>Position</h3>
+        <p>Place the VEROS pillow on any flat surface and gently rest your neck in the contoured cradle.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">02</div>
+        <h3>Select</h3>
+        <p>Choose your therapy mode — traction, heat, vibration, or combine all three for maximum relief.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-number">03</div>
+        <h3>Relax</h3>
+        <p>Let the pillow work for 15–30 minutes. Auto-shutoff ensures safety while you unwind completely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section class="features-strip fade-in">
+    <div class="section-eyebrow">Engineered Excellence</div>
+    <h2 class="section-title" style="color:var(--black)">Built Different</h2>
+    <div class="features-list">
+      <div class="feature-row">
+        <div class="feature-icon-sm">🔥</div>
+        <div class="feature-name">Infrared Heat Therapy</div>
+        <div class="feature-desc">Targeted heat up to 112°F increases blood flow and loosens tight muscles for deep pain relief.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon-sm">📳</div>
+        <div class="feature-name">Vibration Massage</div>
+        <div class="feature-desc">Multi-point vibration nodes relieve tension knots and stimulate recovery across the neck and shoulders.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon-sm">⬆️</div>
+        <div class="feature-name">Cervical Traction Lift</div>
+        <div class="feature-desc">Gentle mechanical traction decompresses vertebrae and restores the natural cervical curve over time.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon-sm">🔋</div>
+        <div class="feature-name">Wireless & Rechargeable</div>
+        <div class="feature-desc">USB-C fast charging. 90 minutes to full. Get 4 complete 30-minute sessions on a single charge.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon-sm">🧠</div>
+        <div class="feature-name">Premium Memory Foam</div>
+        <div class="feature-desc">100% polyurethane memory foam conforms to your unique neck shape for personalized ergonomic support.</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon-sm">🛡️</div>
+        <div class="feature-name">Smart Safety System</div>
+        <div class="feature-desc">Auto-shutoff at 30-minute intervals and active temperature regulation for worry-free use.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section fade-in">
+    <div class="section-eyebrow">Real People. Real Results.</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"After two weeks of daily use, my chronic neck stiffness has completely disappeared. I work 10+ hours at a desk and this has been a game changer for my posture."</p>
+        <div class="review-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <div class="name">Michael T.</div>
+            <div class="tag">Software Developer</div>
+          </div>
+        </div>
+        <div class="verified-badge" style="margin-top:8px">✓ Verified Purchase</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I've tried every neck pillow out there. The traction feature sets this apart — you can literally feel the decompression happening. My neck hump is noticeably smaller after a month."</p>
+        <div class="review-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <div class="name">Sarah K.</div>
+            <div class="tag">Registered Nurse</div>
+          </div>
+        </div>
+        <div class="verified-badge" style="margin-top:8px">✓ Verified Purchase</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I use this before bed every night and my sleep quality has improved dramatically. The heat + vibration combo is incredibly relaxing. Worth every dollar."</p>
+        <div class="review-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <div class="name">James R.</div>
+            <div class="tag">Personal Trainer</div>
+          </div>
+        </div>
+        <div class="verified-badge" style="margin-top:8px">✓ Verified Purchase</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section fade-in">
+    <div class="section-eyebrow">Got Questions?</div>
+    <h2 class="section-title" style="color:var(--black)">Frequently Asked</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long should I use it per session? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We recommend 15–30 minute sessions, 1–2 times daily. The pillow has an auto-shutoff feature at 30 minutes for your safety. Most customers notice results within the first 2 weeks of consistent use.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the VEROS pillow safe to use? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. The pillow features an auto-shutoff system that activates at 30-minute intervals and active temperature regulation limited to 112°F. However, if you have a pre-existing spinal condition, we recommend consulting your physician before use.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does the 90-night guarantee work? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Try the VEROS pillow risk-free for 90 nights. If you're not completely satisfied, simply contact our support team with your order number and we'll process a full refund — no questions asked.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does the battery last? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">A full charge takes about 90 minutes via USB-C and provides 4 complete 30-minute sessions. That's up to 2 hours of total therapy time per charge — enough for most people's weekly routine.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this FSA / HSA eligible? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes! The VEROS Therapeutic Neck Pillow qualifies as a medical device for FSA and HSA purchases. You can use your pre-tax health spending account at checkout.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What makes this different from a regular neck pillow? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Unlike passive neck pillows, VEROS combines three active therapies — cervical traction (mechanical decompression), infrared heat, and vibration massage — in a single wireless device. This multi-modal approach targets neck pain at its source rather than just providing cushioned support.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta fade-in">
+    <div class="section-eyebrow" style="color:var(--accent-dark)">Ready to Feel the Difference?</div>
+    <h2 class="section-title" style="color:var(--black)">Your Neck Deserves Better</h2>
+    <p>Join 50,000+ people who've found relief from neck pain, stiffness, and tension headaches with the VEROS Therapeutic Neck Pillow.</p>
+    <a href="#" class="cta-btn">Shop Now — 40% Off</a>
+    <div class="guarantee-note">🛡️ 90-night money-back guarantee · Free shipping · FSA/HSA eligible</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">VEROS</a>
+        <p>Advanced therapeutic technology for modern neck care. Engineered for relief. Designed for life.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#">Therapeutic Neck Pillow</a>
+        <a href="#">Accessories</a>
+        <a href="#">Gift Cards</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Order Tracking</a>
+        <a href="#">Returns</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Reviews</a>
+        <a href="#">Blog</a>
+        <a href="#">FSA/HSA Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 VEROS. All rights reserved. | <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    // Variant Selector
+    function selectVariant(btn) {
+      document.querySelectorAll('.variant-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    }
+
+    // Add to Cart (Shopify integration point)
+    function addToCart() {
+      const btn = document.querySelector('.atc-btn');
+      btn.textContent = 'Adding...';
+      btn.style.background = 'var(--accent-dark)';
+      setTimeout(() => {
+        btn.textContent = '✓ Added to Cart!';
+        btn.style.background = 'var(--green)';
+        setTimeout(() => {
+          btn.textContent = 'Add to Cart — $149.99';
+          btn.style.background = 'var(--black)';
+        }, 2000);
+      }, 800);
+
+      /*
+        SHOPIFY INTEGRATION:
+        Replace the above with Shopify's Cart API:
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            items: [{ id: YOUR_VARIANT_ID, quantity: 1 }]
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          // Update cart count & show success
+          window.location.href = '/cart';
+        });
+      */
+    }
+
+    // Accordion
+    function toggleAccordion(trigger) {
+      const content = trigger.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+      document.querySelectorAll('.accordion-trigger').forEach(t => t.classList.remove('open'));
+
+      if (!isOpen) {
+        content.classList.add('open');
+        trigger.classList.add('open');
+      }
+    }
+
+    // FAQ
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
